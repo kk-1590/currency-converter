@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-let url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`;
 
 function useCurrencyInfo(currency) {
   const [apiData, setApiData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(url);
+      const response = await fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`);
       const data = await response.json();
       //   console.log(data);
       setApiData(data[currency]);
