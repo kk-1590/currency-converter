@@ -5,7 +5,9 @@ function useCurrencyInfo(currency) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`);
+      const response = await fetch(
+        `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`
+      );
       const data = await response.json();
       //   console.log(data);
       setApiData(data[currency]);
